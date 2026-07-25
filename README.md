@@ -1,47 +1,70 @@
-<h1>React Native Snake Game</h1>
-<p>
-    <img src="https://cloclo13.datacloudmail.ru/weblink/view/2dr3/4Xsfp3rL8?etag=CA6BC75772C80F98A54FDD5D3CB8C68463B74FA2" height="450" />
-    <img src="https://cloclo23.datacloudmail.ru/weblink/view/k6Xa/2rqkxtK8m?etag=A67518D6200022626FE5788D0884538E96C487C5" height="450" />
-    <img src="https://cloclo22.datacloudmail.ru/weblink/view/4yAG/3qaLKtK3Y?etag=2341E5887311C6F1A51F24F36D8DE75E8A8A7821" height="450" />
+# React Native Snake Game
+
+Classic arcade Snake with modern mobile controls — built with React Native.
+
+<p align="center">
+  <img src="examples/2.png" height="420" alt="Splash screen" />
+  <img src="examples/3.png" height="420" alt="Home menu" />
+  <img src="examples/4.png" height="420" alt="Gameplay" />
 </p>
-<h2>Features</h2>
-<ul>
-    <li>Choose board size</li>
-    <li>Choose difficulty</li>
-    <li>Choose color theme</li>
-    <li>Swipes vs Joystick</li>
-    <li>Teleportation</li>
-    <li>JSC vs Hermes vs V8</li>
-</ul>
-<h2>Setup</h2>
 
-1. `git clone`
-2. `npm i`
-3. `cd ios && pod install`
+<p align="center">
+  <img src="examples/5.png" height="420" alt="Game over" />
+  <img src="examples/1.png" height="420" alt="App icon on home screen" />
+</p>
 
-<h2>Engine change</h2>
+## Features
 
-1. Checkout the branch with different engine
-2. `npm i`
-3. `cd android && ./gradlew clean` (if you built the project before)
-4. Profile with Android Studio profiler
-5. Profile in release by adding in android/app/build.gradle
+- **Board size** — 15×20 or 20×20 grid
+- **Difficulty** — Easy, Normal, Hard
+- **Color themes** — Yellow, Blue, Green
+- **Controls** — On-screen D-Pad or swipe gestures
+- **Wall behavior** — Classic game over, or teleport through walls
+- **Persistent settings** — Preferences saved with AsyncStorage / MobX
 
-```gradle
-...
- android {
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    compileOptions {...
+## Screenshots
+
+| Splash | Home | Gameplay | Game over |
+| --- | --- | --- | --- |
+| ![Splash](examples/2.png) | ![Home](examples/3.png) | ![Gameplay](examples/4.png) | ![Game over](examples/5.png) |
+
+## Quick start
+
+**Requirements:** Node.js ≥ 18, JDK 17+, Android Studio / SDK (Android) or Xcode (iOS).
+
+```bash
+git clone <repo-url>
+cd React-Native-Snake-Game
+npm install
 ```
 
-<p>and in application in AndroidManifest.xml</p>
+### Android
 
-```xml
-...
-    android:debuggable="true">
-...
+```bash
+npm start          # Metro (separate terminal)
+npm run android
 ```
+
+### iOS (macOS)
+
+```bash
+cd ios && pod install && cd ..
+npm start
+npm run ios
+```
+
+For full environment setup, architecture notes, and troubleshooting, see **[DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md)**.
+
+## Stack
+
+| Area | Choice |
+| --- | --- |
+| Framework | React Native 0.76 |
+| Language | TypeScript |
+| State | MobX + mobx-persist |
+| Navigation | React Navigation (stack) |
+| Game loop | react-native-game-engine |
+
+## License
+
+Private / project use — see repository owner for terms.
