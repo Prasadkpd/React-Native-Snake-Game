@@ -64,7 +64,3 @@ For full environment setup, architecture notes, and troubleshooting, see **[DEVE
 | State | MobX + mobx-persist |
 | Navigation | React Navigation (stack) |
 | Game loop | react-native-game-engine |
-
-## License
-
-Private / project use — see repository owner for terms.
